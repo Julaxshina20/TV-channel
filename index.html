@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J&J KURAL TV Channel</title>
+
+     <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="tv5.png">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <style>
+        :root {
+            --dark-maroon: #2d0e14;
+            --deep-red: #491017;
+            --vibrant-red: #ba202d;
+            --orange-red: #cb432a;
+            --golden-orange: #e79536;
+            --light-bg: #f8f1e9;
+            --text-dark: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Circular background elements */
+        .circle-bg {
+            position: fixed;
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(50px);
+            opacity: 0.15;
+        }
+
+        .circle-1 {
+            width: 500px;
+            height: 500px;
+            background: var(--vibrant-red);
+            top: -200px;
+            left: -200px;
+        }
+
+        .circle-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--golden-orange);
+            bottom: -150px;
+            right: -150px;
+        }
+
+        .circle-3 {
+            width: 300px;
+            height: 300px;
+            background: var(--orange-red);
+            top: 40%;
+            left: 15%;
+        }
+
+        .circle-4 {
+            width: 250px;
+            height: 250px;
+            background: var(--deep-red);
+            bottom: 20%;
+            right: 15%;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--deep-red), var(--dark-maroon));
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .header-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+         /* Circular background elements
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--vibrant-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 2rem;
+            color: white;
+            border: 3px solid var(--golden-orange);
+            box-shadow: 0 0 15px rgba(231, 149, 54, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover .logo-circle {
+            transform: rotate(15deg);
+        }
+       */
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+          
+        .logo-text span {
+            color: var(--golden-orange);
+            display: block;
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            margin-top: -5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        nav a.active {
+            background: var(--vibrant-red);
+            color: white;
+            box-shadow: 0 4px 12px rgba(186, 32, 45, 0.4);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            background: var(--golden-orange);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--golden-orange);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            z-index: 101;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 90vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(45, 14, 20, 0.85), rgba(73, 16, 23, 0.9)), 
+                        url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h1 span {
+            color: var(--golden-orange);
+            display: block;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.7;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--vibrant-red);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 6px 15px rgba(186, 32, 45, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 40px;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(25deg);
+            transition: all 0.6s;
+        }
+
+        .btn:hover::after {
+            left: 120%;
+        }
+
+        .btn:hover {
+            background: var(--orange-red);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(186, 32, 45, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--golden-orange);
+            margin-left: 1.5rem;
+            box-shadow: 0 4px 15px rgba(231, 149, 54, 0.3);
+        }
+
+        .btn-outline:hover {
+            background: var(--golden-orange);
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            margin: 4rem 0 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--deep-red);
+            display: inline-block;
+            background: white;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, transparent, var(--vibrant-red), var(--golden-orange), transparent);
+            z-index: 0;
+        }
+
+        /* Slider/Carousel */
+        .slider-container {
+            max-width: 1200px;
+            margin: 0 auto 5rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            height: 500px;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+            height: 100%;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 3rem;
+            background: linear-gradient(transparent, rgba(45, 14, 20, 0.9));
+            color: white;
+        }
+
+        .slide-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            max-width: 800px;
+        }
+
+        .slide-content p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1.5rem;
+            z-index: 10;
+        }
+
+        .slider-btn {
+            background: rgba(231, 149, 54, 0.8);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-btn:hover {
+            background: var(--golden-orange);
+            transform: scale(1.1);
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: var(--golden-orange);
+            transform: scale(1.2);
+        }
+
+        /* Programme Categories */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 5rem;
+            padding: 0 1.5rem;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .category-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .category-content {
+            padding: 1.8rem;
+        }
+
+        .category-content h3 {
+            color: var(--deep-red);
+            margin-bottom: 0.8rem;
+            font-size: 1.5rem;
+        }
+
+        .category-content p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .category-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--vibrant-red);
+            color: white;
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(186, 32, 45, 0.4);
+        }
+
+        /* Upcoming Shows */
+        .upcoming-shows {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+            padding: 0 1.5rem;
+        }
+
+        .show-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .show-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .show-date {
+            background: var(--deep-red);
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 100px;
+        }
+
+        .show-date .day {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .show-date .month {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        .show-details {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .show-details h3 {
+            color: var(--deep-red);
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        .show-time {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--vibrant-red);
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+        }
+
+        .show-details p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+        }
+
+        /* Latest News */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 5rem;
+            padding: 0 1.5rem;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .news-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .news-content {
+            padding: 1.8rem;
+        }
+
+        .news-date {
+            display: inline-block;
+            background: var(--golden-orange);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .news-content h3 {
+            color: var(--deep-red);
+            margin-bottom: 0.8rem;
+            font-size: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .news-content p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Customer Reviews */
+        .reviews {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 5rem;
+            padding: 0 1.5rem;
+        }
+
+        .review-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .review-card::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5.5rem;
+            color: rgba(186, 32, 45, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .review-content {
+            margin-top: 1.8rem;
+            line-height: 1.7;
+            color: #444;
+            font-size: 1.05rem;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--vibrant-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-right: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .author-info h4 {
+            color: var(--deep-red);
+            margin-bottom: 0.3rem;
+            font-size: 1.2rem;
+        }
+
+        .author-info p {
+            color: var(--orange-red);
+            font-size: 0.95rem;
+        }
+
+        .rating {
+            color: var(--golden-orange);
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 5rem;
+            margin: 0 1.5rem 5rem;
+        }
+
+        .contact-info {
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--deep-red), var(--dark-maroon));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(231, 149, 54, 0.1);
+            top: -150px;
+            right: -150px;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background: var(--golden-orange);
+        }
+
+        .contact-details {
+            margin: 2.5rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.8rem;
+        }
+
+        .contact-icon {
+            background: var(--vibrant-red);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.2rem;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(186, 32, 45, 0.4);
+        }
+
+        .contact-text h4 {
+            margin-bottom: 0.3rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-text p {
+            color: #ddd;
+            font-size: 1.05rem;
+        }
+
+        .contact-form {
+            padding: 3rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-weight: 500;
+            color: var(--deep-red);
+            font-size: 1.1rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--vibrant-red);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(186, 32, 45, 0.15);
+        }
+
+        textarea.form-control {
+            min-height: 160px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, var(--dark-maroon), var(--deep-red));
+            color: white;
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+
+        .footer-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.8rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--golden-orange);
+        }
+
+        .footer-col p {
+            color: #ddd;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.05rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--golden-orange);
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            color: white;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background: var(--golden-orange);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            color: #aaa;
+            font-size: 1rem;
+            padding: 3rem 1.5rem 0;
+        }
+
+        /* Animation for circles */
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(-15px, -15px) rotate(3deg); }
+            50% { transform: translate(15px, 10px) rotate(-3deg); }
+            75% { transform: translate(-10px, 15px) rotate(2deg); }
+        }
+
+        .circle-1 {
+            animation: float 18s infinite ease-in-out;
+        }
+
+        .circle-2 {
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .circle-3 {
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .circle-4 {
+            animation: float 22s infinite ease-in-out;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .slider-container {
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .slider-container {
+                height: 400px;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--deep-red);
+                flex-direction: column;
+                padding: 2rem 0;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                gap: 1rem;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .btn {
+                padding: 0.9rem 2rem;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                height: 80vh;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-btns {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+            
+            .slider-container {
+                height: 350px;
+            }
+            
+            .slide-content {
+                padding: 1.5rem;
+            }
+            
+            .slide-content h3 {
+                font-size: 1.8rem;
+            }
+            
+            .slider-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .categories,
+            .upcoming-shows,
+            .news-grid,
+            .reviews {
+                grid-template-columns: 1fr;
+            }
+            
+            .show-card {
+                flex-direction: column;
+            }
+            
+            .show-date {
+                flex-direction: row;
+                justify-content: flex-start;
+                gap: 1.5rem;
+                padding: 1rem 1.5rem;
+            }
+            
+            .show-date .day {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Circular Background Elements -->
+    <div class="circle-bg circle-1"></div>
+    <div class="circle-bg circle-2"></div>
+    <div class="circle-bg circle-3"></div>
+    <div class="circle-bg circle-4"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+           
+                <img src="logo4.png" alt="" style="width: 150px; height: 150px;">
+                   
+           
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="#featured">Featured</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#programmes">Programmes</a></li>
+                    <li><a href="#upcoming">Upcoming</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1>Experience <span>Premium Entertainment</span></h1>
+            <p>J&J KURAL TV brings you the finest in entertainment, news, and cultural programming. Watch anytime, anywhere on any device with our premium streaming service.</p>
+            <div class="hero-btns">
+                <a href="#programmes" class="btn">Watch Live Now</a>
+                <a href="#programmes" class="btn btn-outline">Explore Programmes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Programmes Slider -->
+    <section id="featured">
+        <div class="section-title">
+            <h2>Featured Programmes</h2>
+        </div>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80" alt="Featured Programme" class="slide-img">
+                    <div class="slide-content">
+                        <h3>Breaking News: Global Economic Summit</h3>
+                        <p>Live coverage of the international economic summit with expert analysis and exclusive interviews with world leaders.</p>
+                        <a href="#" class="btn">Watch Now</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1460&q=80" alt="Featured Programme" class="slide-img">
+                    <div class="slide-content">
+                        <h3>Cultural Extravaganza: Festival of Lights</h3>
+                        <p>Experience the vibrant colors and traditions of our annual festival celebration with performances from across the nation.</p>
+                        <a href="#" class="btn">Watch Now</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Featured Programme" class="slide-img">
+                    <div class="slide-content">
+                        <h3>Championship Finals: Live Sports Event</h3>
+                        <p>Don't miss the thrilling conclusion to the season as the top teams battle for the championship title.</p>
+                        <a href="#" class="btn">Watch Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-nav">
+                <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="slider-dots">
+                <button class="slider-dot active"></button>
+                <button class="slider-dot"></button>
+                <button class="slider-dot"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-title">
+            <h2>About Us</h2>
+        </div>
+        <div class="about-content">
+            <p style="text-align: center; max-width: 900px; margin: 0 auto 3rem; line-height: 1.8; font-size: 1.15rem; padding: 0 1.5rem;">
+                J&J KURAL TV is a premier entertainment channel dedicated to bringing high-quality programming to viewers worldwide. Founded in 2010, we've grown to become a household name known for our innovative shows, cultural events, and insightful news coverage. Our mission is to entertain, inform, and inspire audiences with content that reflects our diverse society.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-bottom: 4rem; padding: 0 1.5rem;">
+                <div style="background: white; padding: 2.5rem 2rem; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s ease;">
+                    <div style="font-size: 3rem; color: var(--vibrant-red); margin-bottom: 1.2rem; font-weight: 700;">13+</div>
+                    <h3 style="color: var(--deep-red); margin-bottom: 0.8rem; font-size: 1.5rem;">Years of Experience</h3>
+                    <p>Delivering quality entertainment since 2010</p>
+                </div>
+                <div style="background: white; padding: 2.5rem 2rem; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s ease;">
+                    <div style="font-size: 3rem; color: var(--vibrant-red); margin-bottom: 1.2rem; font-weight: 700;">500+</div>
+                    <h3 style="color: var(--deep-red); margin-bottom: 0.8rem; font-size: 1.5rem;">Original Shows</h3>
+                    <p>Unique content created exclusively for our viewers</p>
+                </div>
+                <div style="background: white; padding: 2.5rem 2rem; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s ease;">
+                    <div style="font-size: 3rem; color: var(--vibrant-red); margin-bottom: 1.2rem; font-weight: 700;">24/7</div>
+                    <h3 style="color: var(--deep-red); margin-bottom: 0.8rem; font-size: 1.5rem;">Live Broadcasting</h3>
+                    <p>Round-the-clock entertainment and news coverage</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programme Categories -->
+    <section id="programmes">
+        <div class="section-title">
+            <h2>Programme Categories</h2>
+        </div>
+        <div class="categories">
+            <div class="category-card">
+                <div class="category-img" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                <div class="category-content">
+                    <span class="category-tag">Live</span>
+                    <h3>News & Current Affairs</h3>
+                    <p>Stay updated with the latest news, political analysis, and current events from around the world with our 24/7 coverage.</p>
+                    <a href="#" class="btn" style="padding: 0.7rem 1.5rem; font-size: 0.95rem;">View Schedule</a>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-img" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1541532713592-79a0317b6b77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1460&q=80')"></div>
+                <div class="category-content">
+                    <span class="category-tag">Daily</span>
+                    <h3>Entertainment</h3>
+                    <p>Reality shows, celebrity interviews, comedy specials, and the latest entertainment news to keep you entertained.</p>
+                    <a href="#" class="btn" style="padding: 0.7rem 1.5rem; font-size: 0.95rem;">View Schedule</a>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-img" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                <div class="category-content">
+                    <span class="category-tag">Weekly</span>
+                    <h3>Cultural Programmes</h3>
+                    <p>Explore the rich heritage, traditions, and cultural events from different communities around the world.</p>
+                    <a href="#" class="btn" style="padding: 0.7rem 1.5rem; font-size: 0.95rem;">View Schedule</a>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-img" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                <div class="category-content">
+                    <span class="category-tag">Seasonal</span>
+                    <h3>Sports Coverage</h3>
+                    <p>Live matches, expert analysis, and exclusive interviews with your favorite athletes and sports personalities.</p>
+                    <a href="#" class="btn" style="padding: 0.7rem 1.5rem; font-size: 0.95rem;">View Schedule</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Shows -->
+    <section id="upcoming">
+        <div class="section-title">
+            <h2>Upcoming Shows</h2>
+        </div>
+        <div class="upcoming-shows">
+            <div class="show-card">
+                <div class="show-date">
+                    <div class="day">15</div>
+                    <div class="month">Jul</div>
+                </div>
+                <div class="show-details">
+                    <h3>Global Music Festival</h3>
+                    <div class="show-time">
+                        <i class="fas fa-clock"></i> 8:00 PM - 11:00 PM
+                    </div>
+                    <p>Experience a night of music from around the world with performances by international artists.</p>
+                    <a href="#" class="btn" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Set Reminder</a>
+                </div>
+            </div>
+            
+            <div class="show-card">
+                <div class="show-date">
+                    <div class="day">18</div>
+                    <div class="month">Jul</div>
+                </div>
+                <div class="show-details">
+                    <h3>Political Debate Night</h3>
+                    <div class="show-time">
+                        <i class="fas fa-clock"></i> 9:00 PM - 10:30 PM
+                    </div>
+                    <p>Leading politicians discuss current issues and policies in a live televised debate.</p>
+                    <a href="#" class="btn" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Set Reminder</a>
+                </div>
+            </div>
+            
+            <div class="show-card">
+                <div class="show-date">
+                    <div class="day">22</div>
+                    <div class="month">Jul</div>
+                </div>
+                <div class="show-details">
+                    <h3>Culinary Masters Finale</h3>
+                    <div class="show-time">
+                        <i class="fas fa-clock"></i> 7:00 PM - 9:00 PM
+                    </div>
+                    <p>The grand finale of our cooking competition where chefs compete for the prestigious title.</p>
+                    <a href="#" class="btn" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Set Reminder</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News -->
+    <section id="news">
+        <div class="section-title">
+            <h2>Latest News</h2>
+        </div>
+        <div class="news-grid">
+            <div class="news-card">
+                <div class="news-img" style="background: url('https://images.unsplash.com/photo-1586339949916-3e9457bef6d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                <div class="news-content">
+                    <span class="news-date">July 12, 2023</span>
+                    <h3>J&J KURAL Wins Best Entertainment Channel Award</h3>
+                    <p>Our channel has been recognized for excellence in broadcasting at the National Media Awards ceremony.</p>
+                    <a href="#" class="btn" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Read More</a>
+                </div>
+            </div>
+            
+            <div class="news-card">
+                <div class="news-img" style="background: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                <div class="news-content">
+                    <span class="news-date">July 8, 2023</span>
+                    <h3>New Documentary Series Explores Cultural Heritage</h3>
+                    <p>Our upcoming series will take viewers on a journey through the rich cultural traditions of our nation.</p>
+                    <a href="#" class="btn" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Read More</a>
+                </div>
+            </div>
+            
+            <div class="news-card">
+                <div class="news-img" style="background: url('https://images.unsplash.com/photo-1551818255-e6e10975bc17?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                <div class="news-content">
+                    <span class="news-date">July 3, 2023</span>
+                    <h3>Behind the Scenes: Our New State-of-the-Art Studio</h3>
+                    <p>Take an exclusive look at our newly upgraded broadcasting facilities and technology investments.</p>
+                    <a href="#" class="btn" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section id="reviews">
+        <div class="section-title">
+            <h2>Customer Reviews</h2>
+        </div>
+        <div class="reviews">
+            <div class="review-card">
+                <div class="review-content">
+                    "J&J KURAL TV has transformed our family evenings. The cultural programmes are not only entertaining but also educational. The picture quality is excellent and we love the variety of shows available. The customer support team is always helpful whenever we have questions about our subscription."
+             </div>
+                <div class="review-author">
+                    <div class="author-avatar">SJ</div>
+                    <div class="author-info">
+                        <h4>Stalin Joel</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-content">
+                  "Living abroad, Kural TV keeps me connected to my roots. The shows are clean, family-friendly, and full of values. It’s a joy to watch with my kids every evening. What I love most is their unbiased news. Kural TV has become a daily habit for our household. It’s a joy to watch with my kids every evening."
+                </div>
+                <div class="review-author">
+                    <div class="author-avatar">RP</div>
+                    <div class="author-info">
+                        <h4>Rajesh Patel</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-content">
+                    "The news coverage on J&J KURAL is unparalleled. They provide balanced perspectives and in-depth analysis that you don't get elsewhere. Their mobile app makes it easy to watch on the go, and the streaming quality is consistently excellent. I especially appreciate their cultural programming."
+                </div>
+                <div class="review-author">
+                    <div class="author-avatar">SK</div>
+                    <div class="author-info">
+                        <h4>Sunita Kumar</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-content">
+                    "I've been a loyal viewer since the channel launched. The entertainment shows are fresh and innovative. Customer service is responsive and helpful whenever I have questions. The recent upgrade to HD streaming has made the viewing experience even better. Kural TV brings Tamil culture alive beautifully."
+                </div>
+                <div class="review-author">
+                    <div class="author-avatar">VM</div>
+                    <div class="author-info">
+                        <h4>Vikram Mehta</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p>Have questions or feedback? Reach out to us using the contact information below or fill out the form.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Address</h4>
+                            <p>  Thaddatheru junction, Jaffna. </p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <p>  +94 12 345 6789 </p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p> info@WEBbuilders.lk </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>J&J KURAL TV</h3>
+                <p>Your premier destination for quality entertainment, news, and cultural programming. Broadcasting excellence since 2010.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="#programmes"><i class="fas fa-chevron-right"></i> Programmes</a></li>
+                    <li><a href="#upcoming"><i class="fas fa-chevron-right"></i> Upcoming Shows</a></li>
+                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Programme Categories</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> News & Current Affairs</a></li>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Entertainment</a></li>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Cultural Programmes</a></li>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Sports Coverage</a></li>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Documentaries</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <div class="rounded">
+                            <iframe class="rounded-top w-100" 
+                            style="height: 300px; margin-bottom: -6px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3932.9898340598706!2d80.01045857407397!3d9.681907978429285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afe540941ccc69b%3A0x195a7cb668a2635!2sThaddatheru%20Junction!5e0!3m2!1sen!2slk!4v1751043881647!5m2!1sen!2slk" 
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2025 J&J KURAL TV. | Designed by <a href="https://webbuilder.lk/" style=" color:#b4b4b4;">webbuilder.lk</a> <i class="fas fa-heart" style="color: var(--vibrant-red);"></i>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('nav ul');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('show') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    navMenu.classList.remove('show');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+        
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simple validation
+                let isValid = true;
+                const inputs = this.querySelectorAll('input, textarea');
+                
+                inputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        isValid = false;
+                        input.style.borderColor = 'red';
+                    } else {
+                        input.style.borderColor = '#ddd';
+                    }
+                });
+                
+                if (isValid) {
+                    alert('Thank you for your message! We will get back to you soon.');
+                    this.reset();
+                } else {
+                    alert('Please fill in all required fields.');
+                }
+            });
+        }
+        
+        // Add active class to nav links based on scroll position
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Image Slider Functionality
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        const dots = document.querySelectorAll('.slider-dot');
+        
+        let currentIndex = 0;
+        const slideCount = slides.length;
+        
+        function goToSlide(index) {
+            if (index < 0) {
+                currentIndex = slideCount - 1;
+            } else if (index >= slideCount) {
+                currentIndex = 0;
+            } else {
+                currentIndex = index;
+            }
+            
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Update active dot
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        }
+        
+        function nextSlide() {
+            goToSlide(currentIndex + 1);
+        }
+        
+        function prevSlide() {
+            goToSlide(currentIndex - 1);
+        }
+        
+        // Auto slide every 5 seconds
+        let slideInterval = setInterval(nextSlide, 5000);
+        
+        // Event listeners
+        nextBtn.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            nextSlide();
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            prevSlide();
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+        
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                goToSlide(index);
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                document.querySelector('header').style.padding = '0.5rem 1rem';
+                document.querySelector('header').style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.25)';
+            } else {
+                document.querySelector('header').style.padding = '1rem';
+                document.querySelector('header').style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
+            }
+        });
+        
+        // Initialize
+        goToSlide(0);
+    </script>
+</body>
+</html>
